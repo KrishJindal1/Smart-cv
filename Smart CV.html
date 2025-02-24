@@ -1,0 +1,1557 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+   <head>
+      <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <meta name="description" content="{{project.meta.ogDescription}}">
+      <meta name="theme-color" content="#ffffff">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="robots" content="{{project.meta.robotsMeta}}">
+      
+      <title>{{project.seoTitle}}</title>
+      <!-- SEO Description -->
+      <meta name="description" content="{{project.seoDescription}}">
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <!-- Performance optimization: Preload critical resources -->
+      <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+      
+      <!-- Header Scripts -->
+      <script id="header-scripts">
+        // This script tag will be replaced with actual scripts.head content
+        if (window.scripts && window.scripts.head) {
+          document.getElementById('header-scripts').outerHTML = window.scripts.head;
+        }
+      </script>
+
+      <!-- Preconnect -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+      <!-- Font stylesheet -->
+
+      <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+
+      <!-- Core CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: {
+                  DEFAULT: '{{settings.colors.primary}}',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8', 
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                secondary: {
+                  DEFAULT: '{{settings.colors.secondary}}',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3', 
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                accent: {
+                  DEFAULT: '{{settings.colors.accent}}',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3', 
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+              },
+              fontFamily: {
+                sans: ['{{settings.fonts.primary}}', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                heading: ['{{settings.fonts.secondary}}', 'Inter', 'system-ui', 'sans-serif'],
+                body: ['{{settings.fonts.secondary}}', 'Inter', 'system-ui', 'sans-serif'],
+              },
+              spacing: {
+                '18': '4.5rem',
+                '22': '5.5rem',
+                '30': '7.5rem',
+              },
+              maxWidth: {
+                '8xl': '88rem',
+                '9xl': '96rem',
+              },
+              animation: {
+                'fade-in': 'fadeIn 0.5s ease-in',
+                'fade-out': 'fadeOut 0.5s ease-out',
+                'slide-up': 'slideUp 0.5s ease-out',
+                'slide-down': 'slideDown 0.5s ease-out',
+                'slide-left': 'slideLeft 0.5s ease-out',
+                'slide-right': 'slideRight 0.5s ease-out',
+                'scale-in': 'scaleIn 0.5s ease-out',
+                'scale-out': 'scaleOut 0.5s ease-out',
+                'spin-slow': 'spin 3s linear infinite',
+                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'bounce-slow': 'bounce 3s infinite',
+                'float': 'float 3s ease-in-out infinite',
+              },
+              keyframes: {
+                fadeIn: {
+                  '0%': { opacity: '0' },
+                  '100%': { opacity: '1' },
+                },
+                fadeOut: {
+                  '0%': { opacity: '1' },
+                  '100%': { opacity: '0' },
+                },
+                slideUp: {
+                  '0%': { transform: 'translateY(20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideDown: {
+                  '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideLeft: {
+                  '0%': { transform: 'translateX(20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                slideRight: {
+                  '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                scaleIn: {
+                  '0%': { transform: 'scale(0.9)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                scaleOut: {
+                  '0%': { transform: 'scale(1.1)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                float: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-10px)' },
+                },
+              },
+              aspectRatio: {
+                'portrait': '3/4',
+                'landscape': '4/3',
+                'ultrawide': '21/9',
+              },
+            },
+          },
+          variants: {
+            extend: {
+              opacity: ['disabled'],
+              cursor: ['disabled'],
+              backgroundColor: ['active', 'disabled'],
+              textColor: ['active', 'disabled'],
+            },
+          },
+        }
+      });
+      </script>
+
+      <!-- Utilities and Components -->
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+      
+      <!-- Optimized Font Loading -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      
+      <!-- Icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <!-- Dynamic Meta Tags -->
+      <meta name="description" content="{{project.meta.ogDescription}}">
+      <meta name="keywords" content="{{project.meta.keywords}}">
+      <meta name="robots" content="{{project.meta.robotsMeta}}">
+      <meta name="google-site-verification" content="{{project.meta.googleVerification}}">
+      <meta name="baidu-verification" content="{{project.meta.baiduVerification}}">
+      <meta name="yandex-verification" content="{{project.meta.yandexVerification}}">
+      <meta name="bing-verification" content="{{project.meta.bingVerification}}">
+      <meta property="og:title" content="{{project.meta.ogTitle}}">
+      <meta property="og:description" content="{{project.meta.ogDescription}}">
+      <meta property="og:image" content="{{project.meta.ogImage}}">
+      <meta property="og:type" content="website">
+      <meta property="og:locale" content="en_US">
+      <meta property="og:site_name" content="{{project.name}}">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="{{project.meta.ogTitle}}">
+      <meta name="twitter:description" content="{{project.meta.ogDescription}}">
+      <meta name="twitter:image" content="{{project.meta.ogImage}}">
+    
+      
+      <!-- Font Links -->
+     
+      <link rel="icon" type="image/x-icon" href="{{settings.favicon}}">
+
+      <style>
+        h1, h2, h3, h4, h5, h6 {
+          font-family: {{settings.fonts.primary}}, Inter, system-ui, sans-serif;
+        }
+        body {
+          font-family: {{settings.fonts.secondary}}, Inter, system-ui, sans-serif;
+        }
+      </style>
+   </head>
+   <body class="antialiased text-gray-800 min-h-screen flex flex-col">
+      <!-- Skip to main content link for accessibility -->
+      <a href="#main-content" 
+         class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+         Skip to main content
+      </a>
+
+      <!-- Main content area -->
+      <main id="main-content" class="flex-1 relative h-full">
+        <!-- Content will be injected here -->
+      </main>
+
+      <!-- {bodyScripts} -->
+   </body>
+</html><script>window.projectId = "c62be672-516a-410e-8cc0-bb79c48b73f9";</script><div id='RolloutPageContent'><element id="17f70e09-6a2a-4d4b-a021-ccc5082a2f3e" data-section-id="17f70e09-6a2a-4d4b-a021-ccc5082a2f3e">
+
+
+<div id="root" class="bg-[#E5E7EB]">
+    <div class="flex">
+        <nav class="fixed top-0 left-0 h-screen w-64 bg-white border-r border-neutral-200/20 hidden lg:flex flex-col">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-neutral-200/20">
+                <span class="text-xl font-semibold text-neutral-800">SmartCV Match</span>
+            </div>
+            <ul class="flex-1 px-3 py-4 space-y-1">
+                <li>
+                    <a href="#dashboard-home" class="flex items-center px-3 py-2 text-neutral-700 rounded-lg hover:bg-neutral-100 group transition-colors duration-200">
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#resume-analysis" class="flex items-center px-3 py-2 text-neutral-700 rounded-lg hover:bg-neutral-100 group transition-colors duration-200">
+                        <span>Resume Analysis</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#job-matching" class="flex items-center px-3 py-2 text-neutral-700 rounded-lg hover:bg-neutral-100 group transition-colors duration-200">
+                        <span>Job Matching</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#career-insights" class="flex items-center px-3 py-2 text-neutral-700 rounded-lg hover:bg-neutral-100 group transition-colors duration-200">
+                        <span>Career Insights</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#profile-settings" class="flex items-center px-3 py-2 text-neutral-700 rounded-lg hover:bg-neutral-100 group transition-colors duration-200">
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="border-t border-neutral-200/20 p-4">
+                <div class="flex items-center space-x-3">
+                    <span class="text-sm text-neutral-600">user@example.com</span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="lg:hidden">
+            <div x-data="{ isOpen: false }">
+                <button type="button" 
+                        class="fixed top-4 right-4 inline-flex items-center justify-center p-2 rounded-md text-neutral-400 hover:text-white hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                        @click="isOpen = !isOpen"
+                        aria-controls="mobile-menu"
+                        :aria-expanded="isOpen">
+                    <span x-show="!isOpen" x-cloak>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </span>
+                    <span x-show="isOpen" x-cloak>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </span>
+                </button>
+
+                <div id="mobile-menu"
+                     class="fixed inset-0 z-50 lg:hidden bg-neutral-800/80 backdrop-blur-lg"
+                     x-show="isOpen"
+                     x-cloak
+                     @click.away="isOpen = false"
+                     @resize.window="if (window.innerWidth > 1024) isOpen = false"
+                     x-transition:enter="transition ease-out duration-100 transform"
+                     x-transition:enter-start="opacity-0 scale-95"
+                     x-transition:enter-end="opacity-100 scale-100"
+                     x-transition:leave="transition ease-in duration-75 transform"
+                     x-transition:leave-start="opacity-100 scale-100"
+                     x-transition:leave-end="opacity-0 scale-95">
+                    <div class="px-2 pt-2 pb-3 space-y-1">
+                        <a href="#dashboard-home" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-neutral-700">Dashboard</a>
+                        <a href="#resume-analysis" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-neutral-700">Resume Analysis</a>
+                        <a href="#job-matching" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-neutral-700">Job Matching</a>
+                        <a href="#career-insights" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-neutral-700">Career Insights</a>
+                        <a href="#profile-settings" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-neutral-700">Settings</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <main class="flex-1 ml-0 lg:ml-64">
+            <MountPoint>
+</element><element id="6c6290b3-1041-4654-b4ae-21f52354ea65" data-section-id="6c6290b3-1041-4654-b4ae-21f52354ea65">
+
+
+<div id="layout" class="min-h-screen">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-6">
+        <div class="bg-white rounded-lg border border-neutral-200/20 p-4">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-semibold text-neutral-800">Resume Score</h3>
+                <span class="text-2xl font-bold text-blue-600">85%</span>
+            </div>
+            <div class="space-y-2">
+                <div class="flex justify-between text-sm">
+                    <span class="text-neutral-600">ATS Compatibility</span>
+                    <span class="text-green-600">Excellent</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                    <span class="text-neutral-600">Keyword Match</span>
+                    <span class="text-blue-600">Good</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg border border-neutral-200/20 p-4">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-semibold text-neutral-800">Job Matches</h3>
+                <span class="text-2xl font-bold text-green-600">12</span>
+            </div>
+            <div class="space-y-2">
+                <div class="flex justify-between text-sm">
+                    <span class="text-neutral-600">New Today</span>
+                    <span class="text-green-600">+3</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                    <span class="text-neutral-600">Applied</span>
+                    <span class="text-blue-600">5</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg border border-neutral-200/20 p-4">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-semibold text-neutral-800">Skills Gap</h3>
+                <span class="text-2xl font-bold text-yellow-600">3</span>
+            </div>
+            <div class="space-y-2">
+                <div class="flex justify-between text-sm">
+                    <span class="text-neutral-600">Critical Skills</span>
+                    <span class="text-red-600">1</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                    <span class="text-neutral-600">Nice to Have</span>
+                    <span class="text-yellow-600">2</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg border border-neutral-200/20 p-4">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-semibold text-neutral-800">Applications</h3>
+                <span class="text-2xl font-bold text-purple-600">8</span>
+            </div>
+            <div class="space-y-2">
+                <div class="flex justify-between text-sm">
+                    <span class="text-neutral-600">In Progress</span>
+                    <span class="text-blue-600">3</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                    <span class="text-neutral-600">Completed</span>
+                    <span class="text-green-600">5</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 p-6">
+        <div class="bg-white rounded-lg border border-neutral-200/20 p-4 lg:col-span-2">
+            <h3 class="text-lg font-semibold text-neutral-800 mb-4">Recent Job Matches</h3>
+            <div class="space-y-4">
+                <div class="flex items-center justify-between p-3 bg-neutral-50 rounded-lg">
+                    <div>
+                        <h4 class="font-medium text-neutral-800">Senior Frontend Developer</h4>
+                        <p class="text-sm text-neutral-600">TechCorp Inc.</p>
+                    </div>
+                    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">92% Match</span>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-neutral-50 rounded-lg">
+                    <div>
+                        <h4 class="font-medium text-neutral-800">UI/UX Developer</h4>
+                        <p class="text-sm text-neutral-600">Design Studio X</p>
+                    </div>
+                    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">88% Match</span>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-neutral-50 rounded-lg">
+                    <div>
+                        <h4 class="font-medium text-neutral-800">Full Stack Engineer</h4>
+                        <p class="text-sm text-neutral-600">StartupHub</p>
+                    </div>
+                    <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">75% Match</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg border border-neutral-200/20 p-4">
+            <h3 class="text-lg font-semibold text-neutral-800 mb-4">Recommended Skills</h3>
+            <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                    <span class="text-neutral-700">React Native</span>
+                    <span class="text-sm text-red-600">High Priority</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-neutral-700">GraphQL</span>
+                    <span class="text-sm text-yellow-600">Medium Priority</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-neutral-700">Docker</span>
+                    <span class="text-sm text-yellow-600">Medium Priority</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-neutral-700">TypeScript</span>
+                    <span class="text-sm text-blue-600">Low Priority</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</element><element id="f5319de9-cf35-4a0b-ab59-93ee57972a94" data-section-id="f5319de9-cf35-4a0b-ab59-93ee57972a94">
+
+
+<div id="dashboard-home" class="min-h-screen p-6">
+    <div class="mb-8">
+        <h2 class="text-2xl font-bold text-neutral-800">Welcome back, User!</h2>
+        <p class="text-neutral-600">Here's your resume performance overview</p>
+    </div>
+
+    <div class="mb-8">
+        <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-neutral-800">Current Resume Status</h3>
+                    <p class="text-neutral-600">Last updated: 2 days ago</p>
+                </div>
+                <button class="mt-4 md:mt-0 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    Upload New Resume
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-4 bg-neutral-50 rounded-lg">
+                    <div class="mb-2 text-neutral-600">Overall Score</div>
+                    <div class="text-3xl font-bold text-blue-600">85%</div>
+                    <div class="text-sm text-neutral-500">Strong Performance</div>
+                </div>
+                <div class="p-4 bg-neutral-50 rounded-lg">
+                    <div class="mb-2 text-neutral-600">ATS Compatibility</div>
+                    <div class="text-3xl font-bold text-green-600">92%</div>
+                    <div class="text-sm text-neutral-500">Excellent</div>
+                </div>
+                <div class="p-4 bg-neutral-50 rounded-lg">
+                    <div class="mb-2 text-neutral-600">Keyword Match</div>
+                    <div class="text-3xl font-bold text-yellow-600">78%</div>
+                    <div class="text-sm text-neutral-500">Good</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+            <h3 class="text-xl font-semibold text-neutral-800 mb-4">Recent Applications</h3>
+            <div class="space-y-4">
+                <div class="flex items-center justify-between p-3 bg-neutral-50 rounded-lg">
+                    <div>
+                        <div class="font-medium">Senior Frontend Developer</div>
+                        <div class="text-sm text-neutral-600">Google</div>
+                    </div>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">In Review</span>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-neutral-50 rounded-lg">
+                    <div>
+                        <div class="font-medium">UX Engineer</div>
+                        <div class="text-sm text-neutral-600">Microsoft</div>
+                    </div>
+                    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Matched</span>
+                </div>
+                <div class="flex items-center justify-between p-3 bg-neutral-50 rounded-lg">
+                    <div>
+                        <div class="font-medium">Full Stack Developer</div>
+                        <div class="text-sm text-neutral-600">Amazon</div>
+                    </div>
+                    <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">Pending</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+            <h3 class="text-xl font-semibold text-neutral-800 mb-4">Recommended Actions</h3>
+            <div class="space-y-4">
+                <div class="flex items-center p-3 bg-neutral-50 rounded-lg">
+                    <div class="flex-1">
+                        <div class="font-medium text-red-600">Critical: Add missing skills</div>
+                        <div class="text-sm text-neutral-600">3 key skills missing for target roles</div>
+                    </div>
+                    <button class="px-3 py-1 text-sm text-blue-600 hover:text-blue-800">View</button>
+                </div>
+                <div class="flex items-center p-3 bg-neutral-50 rounded-lg">
+                    <div class="flex-1">
+                        <div class="font-medium text-yellow-600">Update work experience</div>
+                        <div class="text-sm text-neutral-600">Last updated 3 months ago</div>
+                    </div>
+                    <button class="px-3 py-1 text-sm text-blue-600 hover:text-blue-800">Update</button>
+                </div>
+                <div class="flex items-center p-3 bg-neutral-50 rounded-lg">
+                    <div class="flex-1">
+                        <div class="font-medium text-green-600">Complete profile</div>
+                        <div class="text-sm text-neutral-600">85% complete - add certificates</div>
+                    </div>
+                    <button class="px-3 py-1 text-sm text-blue-600 hover:text-blue-800">Complete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+        <h3 class="text-xl font-semibold text-neutral-800 mb-4">Upcoming Interviews</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="p-4 bg-neutral-50 rounded-lg">
+                <div class="text-lg font-medium">Technical Interview</div>
+                <div class="text-neutral-600">Google</div>
+                <div class="text-sm text-neutral-500">Tomorrow, 2:00 PM</div>
+                <button class="mt-3 w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    Prepare Now
+                </button>
+            </div>
+            <div class="p-4 bg-neutral-50 rounded-lg">
+                <div class="text-lg font-medium">HR Round</div>
+                <div class="text-neutral-600">Microsoft</div>
+                <div class="text-sm text-neutral-500">Friday, 11:00 AM</div>
+                <button class="mt-3 w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    View Details
+                </button>
+            </div>
+            <div class="p-4 bg-neutral-50 rounded-lg">
+                <div class="text-lg font-medium">System Design</div>
+                <div class="text-neutral-600">Amazon</div>
+                <div class="text-sm text-neutral-500">Next Week, Mon 3:00 PM</div>
+                <button class="mt-3 w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    Start Prep
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</element><element id="d11bbee0-d862-45aa-94df-6efff2811434" data-section-id="d11bbee0-d862-45aa-94df-6efff2811434">
+
+
+<div id="resume-analysis" class="min-h-screen p-6">
+    <div class="mb-8">
+        <h2 class="text-2xl font-bold text-neutral-800">Resume Analysis</h2>
+        <p class="text-neutral-600">AI-powered insights and optimization suggestions</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 space-y-6">
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-semibold text-neutral-800">Current Resume</h3>
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                        Upload New
+                    </button>
+                </div>
+                <div class="p-4 bg-neutral-50 rounded-lg mb-4">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <div class="font-medium">MyResume_Latest.pdf</div>
+                            <div class="text-sm text-neutral-600">Uploaded 2 days ago</div>
+                        </div>
+                        <button class="text-blue-600 hover:text-blue-800">Download</button>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="p-3 bg-neutral-50 rounded-lg text-center">
+                        <div class="text-sm text-neutral-600">ATS Score</div>
+                        <div class="text-2xl font-bold text-green-600">92%</div>
+                    </div>
+                    <div class="p-3 bg-neutral-50 rounded-lg text-center">
+                        <div class="text-sm text-neutral-600">Keyword Match</div>
+                        <div class="text-2xl font-bold text-blue-600">85%</div>
+                    </div>
+                    <div class="p-3 bg-neutral-50 rounded-lg text-center">
+                        <div class="text-sm text-neutral-600">Format Score</div>
+                        <div class="text-2xl font-bold text-yellow-600">78%</div>
+                    </div>
+                    <div class="p-3 bg-neutral-50 rounded-lg text-center">
+                        <div class="text-sm text-neutral-600">Overall Rating</div>
+                        <div class="text-2xl font-bold text-purple-600">88%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-4">Detailed Analysis</h3>
+                <div class="space-y-4">
+                    <div class="p-4 bg-green-50 border border-green-200 rounded-lg">
+                        <div class="font-medium text-green-800">Strong Points</div>
+                        <ul class="mt-2 space-y-1 text-sm text-green-700">
+                            <li>• Clear professional summary</li>
+                            <li>• Well-structured work experience</li>
+                            <li>• Quantifiable achievements</li>
+                            <li>• Relevant technical skills</li>
+                        </ul>
+                    </div>
+                    <div class="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                        <div class="font-medium text-yellow-800">Areas for Improvement</div>
+                        <ul class="mt-2 space-y-1 text-sm text-yellow-700">
+                            <li>• Add more industry-specific keywords</li>
+                            <li>• Expand on leadership experiences</li>
+                            <li>• Include more recent certifications</li>
+                        </ul>
+                    </div>
+                    <div class="p-4 bg-red-50 border border-red-200 rounded-lg">
+                        <div class="font-medium text-red-800">Critical Issues</div>
+                        <ul class="mt-2 space-y-1 text-sm text-red-700">
+                            <li>• Missing contact information</li>
+                            <li>• Outdated skills section</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="space-y-6">
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-4">AI Recommendations</h3>
+                <div class="space-y-3">
+                    <button class="w-full p-3 text-left bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors">
+                        <div class="font-medium text-blue-800">Optimize for ATS</div>
+                        <div class="text-sm text-blue-600">Improve parsing accuracy</div>
+                    </button>
+                    <button class="w-full p-3 text-left bg-purple-50 hover:bg-purple-100 rounded-lg transition-colors">
+                        <div class="font-medium text-purple-800">Generate Cover Letter</div>
+                        <div class="text-sm text-purple-600">AI-powered customization</div>
+                    </button>
+                    <button class="w-full p-3 text-left bg-green-50 hover:bg-green-100 rounded-lg transition-colors">
+                        <div class="font-medium text-green-800">Format Enhancement</div>
+                        <div class="text-sm text-green-600">Professional templates</div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-4">Keyword Analysis</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="text-neutral-700">React.js</span>
+                        <span class="text-green-600">Excellent</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-neutral-700">Node.js</span>
+                        <span class="text-yellow-600">Good</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-neutral-700">Python</span>
+                        <span class="text-red-600">Missing</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-neutral-700">AWS</span>
+                        <span class="text-yellow-600">Good</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-4">Export Options</h3>
+                <div class="space-y-3">
+                    <button class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                        Download as PDF
+                    </button>
+                    <button class="w-full px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors">
+                        Download as DOCX
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</element><element id="482e8dd1-777a-4304-bcaf-bf34dab12273" data-section-id="482e8dd1-777a-4304-bcaf-bf34dab12273">
+
+<div id="job-matching" class="min-h-screen p-6">
+    <div class="mb-8">
+        <h2 class="text-2xl font-bold text-neutral-800">Job Matching</h2>
+        <p class="text-neutral-600">AI-powered job recommendations based on your profile</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 space-y-6">
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-semibold text-neutral-800">Matched Jobs</h3>
+                    <div class="flex space-x-2">
+                        <select class="px-3 py-2 border border-neutral-200 rounded-lg">
+                            <option>Most Relevant</option>
+                            <option>Newest First</option>
+                            <option>Highest Match</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="p-4 bg-neutral-50 rounded-lg hover:bg-neutral-100 transition-colors">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h4 class="font-semibold text-lg">Senior Frontend Developer</h4>
+                                <p class="text-neutral-600">Google - Mountain View, CA</p>
+                            </div>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full">95% Match</span>
+                        </div>
+                        <div class="flex gap-2 mb-3">
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-sm rounded">React</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-sm rounded">TypeScript</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-sm rounded">Node.js</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-neutral-600">Posted 2 days ago</span>
+                            <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">Apply Now</button>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-neutral-50 rounded-lg hover:bg-neutral-100 transition-colors">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h4 class="font-semibold text-lg">Full Stack Engineer</h4>
+                                <p class="text-neutral-600">Microsoft - Seattle, WA</p>
+                            </div>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full">88% Match</span>
+                        </div>
+                        <div class="flex gap-2 mb-3">
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-sm rounded">Vue.js</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-sm rounded">Python</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-sm rounded">AWS</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-neutral-600">Posted 3 days ago</span>
+                            <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">Apply Now</button>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-neutral-50 rounded-lg hover:bg-neutral-100 transition-colors">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h4 class="font-semibold text-lg">UX Engineer</h4>
+                                <p class="text-neutral-600">Meta - Menlo Park, CA</p>
+                            </div>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full">82% Match</span>
+                        </div>
+                        <div class="flex gap-2 mb-3">
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-sm rounded">UI/UX</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-sm rounded">JavaScript</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-sm rounded">Figma</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-neutral-600">Posted 4 days ago</span>
+                            <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="space-y-6">
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-4">Filters</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Location</label>
+                        <input type="text" placeholder="City, State, or Remote" class="w-full px-3 py-2 border border-neutral-200 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Job Type</label>
+                        <select class="w-full px-3 py-2 border border-neutral-200 rounded-lg">
+                            <option>All Types</option>
+                            <option>Full-time</option>
+                            <option>Contract</option>
+                            <option>Remote</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Experience Level</label>
+                        <select class="w-full px-3 py-2 border border-neutral-200 rounded-lg">
+                            <option>All Levels</option>
+                            <option>Entry Level</option>
+                            <option>Mid Level</option>
+                            <option>Senior Level</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Salary Range</label>
+                        <select class="w-full px-3 py-2 border border-neutral-200 rounded-lg">
+                            <option>Any Range</option>
+                            <option>$50k - $100k</option>
+                            <option>$100k - $150k</option>
+                            <option>$150k+</option>
+                        </select>
+                    </div>
+                    <button class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                        Apply Filters
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-4">Match Statistics</h3>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-neutral-600">Total Matches</span>
+                        <span class="font-semibold">156</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-neutral-600">High Match (>90%)</span>
+                        <span class="font-semibold text-green-600">24</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-neutral-600">Good Match (>80%)</span>
+                        <span class="font-semibold text-blue-600">67</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-neutral-600">Applications Sent</span>
+                        <span class="font-semibold">12</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></element><element id="7ccaa4d8-f8ab-442c-bbc0-bb76d53f411c" data-section-id="7ccaa4d8-f8ab-442c-bbc0-bb76d53f411c">
+
+<div id="career-insights" class="min-h-screen p-6">
+    <div class="mb-8">
+        <h2 class="text-2xl font-bold text-neutral-800">Career Insights</h2>
+        <p class="text-neutral-600">AI-powered career analytics and growth opportunities</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 space-y-6">
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-6">Salary Insights</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div class="p-4 bg-neutral-50 rounded-lg">
+                        <div class="text-sm text-neutral-600">Current Market Value</div>
+                        <div class="text-2xl font-bold text-blue-600">$120,000</div>
+                        <div class="text-sm text-green-600">+15% vs. Industry Avg</div>
+                    </div>
+                    <div class="p-4 bg-neutral-50 rounded-lg">
+                        <div class="text-sm text-neutral-600">Potential in 2 Years</div>
+                        <div class="text-2xl font-bold text-purple-600">$145,000</div>
+                        <div class="text-sm text-green-600">+20% Growth</div>
+                    </div>
+                    <div class="p-4 bg-neutral-50 rounded-lg">
+                        <div class="text-sm text-neutral-600">Top Company Offers</div>
+                        <div class="text-2xl font-bold text-green-600">$160,000</div>
+                        <div class="text-sm text-blue-600">FAANG Companies</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-6">Skills Gap Analysis</h3>
+                <div class="space-y-4">
+                    <div class="p-4 bg-red-50 rounded-lg">
+                        <div class="font-medium text-red-800 mb-2">Critical Skills to Acquire</div>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+                            <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm text-center">Docker</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm text-center">Kubernetes</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm text-center">GraphQL</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-yellow-50 rounded-lg">
+                        <div class="font-medium text-yellow-800 mb-2">Skills to Improve</div>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm text-center">React Native</span>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm text-center">TypeScript</span>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm text-center">AWS</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-green-50 rounded-lg">
+                        <div class="font-medium text-green-800 mb-2">Strong Skills</div>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm text-center">React.js</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm text-center">Node.js</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm text-center">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-6">Industry Trends</h3>
+                <div class="space-y-4">
+                    <div class="p-4 bg-neutral-50 rounded-lg">
+                        <div class="font-medium mb-2">Most In-Demand Roles</div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span>Full Stack Developer</span>
+                                <span class="text-green-600">High Demand</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>DevOps Engineer</span>
+                                <span class="text-green-600">Very High Demand</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>AI/ML Engineer</span>
+                                <span class="text-green-600">Growing Rapidly</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="space-y-6">
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-4">Learning Recommendations</h3>
+                <div class="space-y-3">
+                    <div class="p-3 bg-blue-50 rounded-lg">
+                        <div class="font-medium text-blue-800">Docker & Kubernetes</div>
+                        <p class="text-sm text-blue-600 mb-2">Essential for DevOps roles</p>
+                        <button class="text-sm text-blue-700 hover:underline">View Course →</button>
+                    </div>
+                    <div class="p-3 bg-purple-50 rounded-lg">
+                        <div class="font-medium text-purple-800">Advanced React Patterns</div>
+                        <p class="text-sm text-purple-600 mb-2">Senior Frontend Development</p>
+                        <button class="text-sm text-purple-700 hover:underline">View Course →</button>
+                    </div>
+                    <div class="p-3 bg-green-50 rounded-lg">
+                        <div class="font-medium text-green-800">System Design</div>
+                        <p class="text-sm text-green-600 mb-2">Architecture & Scaling</p>
+                        <button class="text-sm text-green-700 hover:underline">View Course →</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-4">Career Path</h3>
+                <div class="space-y-3">
+                    <div class="flex items-center p-3 bg-neutral-50 rounded-lg">
+                        <div class="flex-1">
+                            <div class="font-medium">Senior Developer</div>
+                            <div class="text-sm text-neutral-600">Current Position</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-3 bg-neutral-50 rounded-lg">
+                        <div class="flex-1">
+                            <div class="font-medium">Tech Lead</div>
+                            <div class="text-sm text-neutral-600">Next Step</div>
+                        </div>
+                        <span class="text-sm text-blue-600">1-2 years</span>
+                    </div>
+                    <div class="flex items-center p-3 bg-neutral-50 rounded-lg">
+                        <div class="flex-1">
+                            <div class="font-medium">Engineering Manager</div>
+                            <div class="text-sm text-neutral-600">Future Goal</div>
+                        </div>
+                        <span class="text-sm text-blue-600">3-4 years</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></element><element id="f7f71f1a-7042-475f-b55d-effe510bae9c" data-section-id="f7f71f1a-7042-475f-b55d-effe510bae9c">
+
+<div id="profile-settings" class="min-h-screen p-6">
+    <div class="mb-8">
+        <h2 class="text-2xl font-bold text-neutral-800">Profile Settings</h2>
+        <p class="text-neutral-600">Manage your account preferences and privacy settings</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 space-y-6">
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-6">Personal Information</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">First Name</label>
+                        <input type="text" value="John" class="w-full px-3 py-2 border border-neutral-200 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Last Name</label>
+                        <input type="text" value="Doe" class="w-full px-3 py-2 border border-neutral-200 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Email Address</label>
+                        <input type="email" value="john.doe@example.com" class="w-full px-3 py-2 border border-neutral-200 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Phone Number</label>
+                        <input type="tel" value="+1 (555) 123-4567" class="w-full px-3 py-2 border border-neutral-200 rounded-lg">
+                    </div>
+                </div>
+                <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    Save Changes
+                </button>
+            </div>
+
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-6">Privacy Settings</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between p-4 bg-neutral-50 rounded-lg">
+                        <div>
+                            <div class="font-medium">Profile Visibility</div>
+                            <div class="text-sm text-neutral-600">Control who can view your profile</div>
+                        </div>
+                        <select class="px-3 py-2 border border-neutral-200 rounded-lg">
+                            <option>Public</option>
+                            <option>Private</option>
+                            <option>Recruiters Only</option>
+                        </select>
+                    </div>
+                    <div class="flex items-center justify-between p-4 bg-neutral-50 rounded-lg">
+                        <div>
+                            <div class="font-medium">Email Notifications</div>
+                            <div class="text-sm text-neutral-600">Manage email alert preferences</div>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer" checked>
+                            <div class="w-11 h-6 bg-neutral-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-between p-4 bg-neutral-50 rounded-lg">
+                        <div>
+                            <div class="font-medium">Two-Factor Authentication</div>
+                            <div class="text-sm text-neutral-600">Add extra security to your account</div>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer">
+                            <div class="w-11 h-6 bg-neutral-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-6">Job Preferences</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Preferred Job Titles</label>
+                        <input type="text" placeholder="e.g., Frontend Developer, UI Engineer" class="w-full px-3 py-2 border border-neutral-200 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Preferred Locations</label>
+                        <input type="text" placeholder="e.g., San Francisco, Remote" class="w-full px-3 py-2 border border-neutral-200 rounded-lg">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">Expected Salary Range</label>
+                        <select class="w-full px-3 py-2 border border-neutral-200 rounded-lg">
+                            <option>$50,000 - $75,000</option>
+                            <option>$75,000 - $100,000</option>
+                            <option>$100,000 - $150,000</option>
+                            <option>$150,000+</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    Update Preferences
+                </button>
+            </div>
+        </div>
+
+        <div class="space-y-6">
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-4">Account Security</h3>
+                <div class="space-y-3">
+                    <button class="w-full px-4 py-2 text-left bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors">
+                        <div class="font-medium">Change Password</div>
+                        <div class="text-sm text-neutral-600">Update your login credentials</div>
+                    </button>
+                    <button class="w-full px-4 py-2 text-left bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors">
+                        <div class="font-medium">Connected Accounts</div>
+                        <div class="text-sm text-neutral-600">Manage linked services</div>
+                    </button>
+                    <button class="w-full px-4 py-2 text-left bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors">
+                        <div class="font-medium">Login History</div>
+                        <div class="text-sm text-neutral-600">Review recent activity</div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-4">Data & Privacy</h3>
+                <div class="space-y-3">
+                    <button class="w-full px-4 py-2 text-left bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors text-red-600">
+                        <div class="font-medium">Delete Account</div>
+                        <div class="text-sm">Permanently remove your data</div>
+                    </button>
+                    <button class="w-full px-4 py-2 text-left bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors">
+                        <div class="font-medium">Download My Data</div>
+                        <div class="text-sm text-neutral-600">Get a copy of your information</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></element><element id="eba8e574-8f76-4705-87e4-d3daf244e979" data-section-id="eba8e574-8f76-4705-87e4-d3daf244e979">
+
+<div id="applications-tracker" class="min-h-screen p-6">
+    <div class="mb-8">
+        <h2 class="text-2xl font-bold text-neutral-800">Applications Tracker</h2>
+        <p class="text-neutral-600">Monitor and manage your job applications</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 space-y-6">
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-semibold text-neutral-800">Active Applications</h3>
+                    <div class="flex space-x-2">
+                        <select class="px-3 py-2 border border-neutral-200 rounded-lg">
+                            <option>All Applications</option>
+                            <option>In Progress</option>
+                            <option>Interview Stage</option>
+                            <option>Completed</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="p-4 bg-neutral-50 rounded-lg hover:bg-neutral-100 transition-colors">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h4 class="font-semibold text-lg">Senior Frontend Developer</h4>
+                                <p class="text-neutral-600">Google - Mountain View, CA</p>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full">Interview Scheduled</span>
+                        </div>
+                        <div class="flex items-center gap-4 mt-3">
+                            <div class="text-sm text-neutral-600">Applied: Jan 15, 2024</div>
+                            <div class="text-sm text-neutral-600">Last Updated: 2 days ago</div>
+                        </div>
+                        <div class="mt-3 flex gap-2">
+                            <button class="px-3 py-1 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700">View Details</button>
+                            <button class="px-3 py-1 text-sm border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50">Track Status</button>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-neutral-50 rounded-lg hover:bg-neutral-100 transition-colors">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h4 class="font-semibold text-lg">Full Stack Engineer</h4>
+                                <p class="text-neutral-600">Microsoft - Seattle, WA</p>
+                            </div>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full">Under Review</span>
+                        </div>
+                        <div class="flex items-center gap-4 mt-3">
+                            <div class="text-sm text-neutral-600">Applied: Jan 12, 2024</div>
+                            <div class="text-sm text-neutral-600">Last Updated: 5 days ago</div>
+                        </div>
+                        <div class="mt-3 flex gap-2">
+                            <button class="px-3 py-1 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700">View Details</button>
+                            <button class="px-3 py-1 text-sm border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50">Track Status</button>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-neutral-50 rounded-lg hover:bg-neutral-100 transition-colors">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h4 class="font-semibold text-lg">Senior UI Engineer</h4>
+                                <p class="text-neutral-600">Meta - Menlo Park, CA</p>
+                            </div>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full">Offer Received</span>
+                        </div>
+                        <div class="flex items-center gap-4 mt-3">
+                            <div class="text-sm text-neutral-600">Applied: Jan 10, 2024</div>
+                            <div class="text-sm text-neutral-600">Last Updated: 1 day ago</div>
+                        </div>
+                        <div class="mt-3 flex gap-2">
+                            <button class="px-3 py-1 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700">View Details</button>
+                            <button class="px-3 py-1 text-sm border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50">Track Status</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-6">Application Timeline</h3>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="w-2 bg-blue-200 rounded relative">
+                            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full"></div>
+                        </div>
+                        <div class="flex-1 pb-6">
+                            <div class="font-medium">Technical Interview Scheduled</div>
+                            <div class="text-sm text-neutral-600">Google - Senior Frontend Developer</div>
+                            <div class="text-sm text-neutral-500">Tomorrow, 2:00 PM PST</div>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-2 bg-blue-200 rounded relative">
+                            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full"></div>
+                        </div>
+                        <div class="flex-1 pb-6">
+                            <div class="font-medium">Application Reviewed</div>
+                            <div class="text-sm text-neutral-600">Microsoft - Full Stack Engineer</div>
+                            <div class="text-sm text-neutral-500">2 days ago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="space-y-6">
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-4">Application Stats</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-4 bg-neutral-50 rounded-lg text-center">
+                        <div class="text-2xl font-bold text-blue-600">12</div>
+                        <div class="text-sm text-neutral-600">Total Applications</div>
+                    </div>
+                    <div class="p-4 bg-neutral-50 rounded-lg text-center">
+                        <div class="text-2xl font-bold text-green-600">4</div>
+                        <div class="text-sm text-neutral-600">Interviews</div>
+                    </div>
+                    <div class="p-4 bg-neutral-50 rounded-lg text-center">
+                        <div class="text-2xl font-bold text-yellow-600">5</div>
+                        <div class="text-sm text-neutral-600">In Review</div>
+                    </div>
+                    <div class="p-4 bg-neutral-50 rounded-lg text-center">
+                        <div class="text-2xl font-bold text-purple-600">1</div>
+                        <div class="text-sm text-neutral-600">Offers</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-4">Upcoming Interviews</h3>
+                <div class="space-y-3">
+                    <div class="p-3 bg-neutral-50 rounded-lg">
+                        <div class="font-medium">Technical Round</div>
+                        <div class="text-sm text-neutral-600">Google</div>
+                        <div class="text-sm text-blue-600">Tomorrow, 2:00 PM</div>
+                    </div>
+                    <div class="p-3 bg-neutral-50 rounded-lg">
+                        <div class="font-medium">HR Discussion</div>
+                        <div class="text-sm text-neutral-600">Microsoft</div>
+                        <div class="text-sm text-blue-600">Jan 20, 11:00 AM</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-4">Quick Actions</h3>
+                <div class="space-y-3">
+                    <button class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                        Add New Application
+                    </button>
+                    <button class="w-full px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors">
+                        Schedule Interview
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></element><element id="581600fd-a565-4b25-90f8-8f31e3462ce2" data-section-id="581600fd-a565-4b25-90f8-8f31e3462ce2">
+
+<div id="premium-features" class="min-h-screen p-6">
+    <div class="mb-8">
+        <h2 class="text-2xl font-bold text-neutral-800">Premium Features</h2>
+        <p class="text-neutral-600">Unlock advanced tools and capabilities</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 space-y-6">
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-6">Advanced Resume Tools</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 bg-neutral-50 rounded-lg border-l-4 border-blue-600">
+                        <div class="font-medium text-lg mb-2">AI Resume Builder</div>
+                        <p class="text-neutral-600 mb-3">Professional templates with AI-powered customization</p>
+                        <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors w-full">
+                            Create Resume
+                        </button>
+                    </div>
+                    <div class="p-4 bg-neutral-50 rounded-lg border-l-4 border-purple-600">
+                        <div class="font-medium text-lg mb-2">Cover Letter Generator</div>
+                        <p class="text-neutral-600 mb-3">AI-generated, job-specific cover letters</p>
+                        <button class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors w-full">
+                            Generate Letter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-6">Interview Preparation Suite</h3>
+                <div class="space-y-4">
+                    <div class="p-4 bg-neutral-50 rounded-lg">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <div class="font-medium text-lg">AI Mock Interviews</div>
+                                <p class="text-neutral-600">Practice with AI-powered interview simulations</p>
+                            </div>
+                            <button class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+                                Start Practice
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-neutral-50 rounded-lg">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <div class="font-medium text-lg">Response Analysis</div>
+                                <p class="text-neutral-600">Get feedback on your interview answers</p>
+                            </div>
+                            <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                                Analyze Answers
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-6">Professional Network</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 bg-neutral-50 rounded-lg">
+                        <div class="font-medium text-lg mb-2">Direct Recruiter Access</div>
+                        <p class="text-neutral-600 mb-3">Connect with hiring managers</p>
+                        <button class="px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors w-full">
+                            View Network
+                        </button>
+                    </div>
+                    <div class="p-4 bg-neutral-50 rounded-lg">
+                        <div class="font-medium text-lg mb-2">Referral System</div>
+                        <p class="text-neutral-600 mb-3">Get recommended by professionals</p>
+                        <button class="px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors w-full">
+                            Find Referrals
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="space-y-6">
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-4">Premium Status</h3>
+                <div class="p-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg text-white">
+                    <div class="text-lg font-medium mb-2">Premium Member</div>
+                    <div class="text-sm opacity-90">Valid until: Jan 2025</div>
+                </div>
+                <div class="mt-4 space-y-2">
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                        </svg>
+                        <span>Unlimited Resume Analytics</span>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                        </svg>
+                        <span>Advanced AI Features</span>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+                        </svg>
+                        <span>Priority Support</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-4">Usage Statistics</h3>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-neutral-600">AI Resume Reviews</span>
+                        <span class="font-semibold">12/∞</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-neutral-600">Mock Interviews</span>
+                        <span class="font-semibold">5/∞</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-neutral-600">Direct Messages</span>
+                        <span class="font-semibold">25/∞</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-4">Premium Support</h3>
+                <button class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors mb-3">
+                    Contact Support
+                </button>
+                <button class="w-full px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors">
+                    View Documentation
+                </button>
+            </div>
+        </div>
+    </div>
+</div></element><element id="e1c07c91-eed4-4e52-9a5b-472cbe4c0e9f" data-section-id="e1c07c91-eed4-4e52-9a5b-472cbe4c0e9f">
+
+<div id="notifications" class="min-h-screen p-6">
+    <div class="mb-8">
+        <h2 class="text-2xl font-bold text-neutral-800">Notifications</h2>
+        <p class="text-neutral-600">Stay updated with your application progress and opportunities</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 space-y-6">
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-semibold text-neutral-800">Recent Notifications</h3>
+                    <button class="text-blue-600 hover:text-blue-800">Mark all as read</button>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-600">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <div class="font-medium text-blue-900">Interview Scheduled</div>
+                                <p class="text-blue-800">Technical interview with Google scheduled for tomorrow at 2:00 PM PST</p>
+                                <div class="text-sm text-blue-700 mt-1">10 minutes ago</div>
+                            </div>
+                            <button class="text-blue-700 hover:text-blue-900">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-green-50 rounded-lg border-l-4 border-green-600">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <div class="font-medium text-green-900">Application Update</div>
+                                <p class="text-green-800">Your application for Senior Frontend Developer at Microsoft has been reviewed</p>
+                                <div class="text-sm text-green-700 mt-1">1 hour ago</div>
+                            </div>
+                            <button class="text-green-700 hover:text-green-900">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-neutral-50 rounded-lg border-l-4 border-neutral-400">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <div class="font-medium">Resume Analysis Complete</div>
+                                <p class="text-neutral-600">AI analysis of your updated resume is now available</p>
+                                <div class="text-sm text-neutral-500 mt-1">3 hours ago</div>
+                            </div>
+                            <button class="text-neutral-500 hover:text-neutral-700">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-6">Earlier Notifications</h3>
+                <div class="space-y-4">
+                    <div class="p-4 bg-neutral-50 rounded-lg">
+                        <div class="font-medium">New Job Match</div>
+                        <p class="text-neutral-600">New position matching your profile: UX Engineer at Meta</p>
+                        <div class="text-sm text-neutral-500 mt-1">Yesterday</div>
+                    </div>
+                    <div class="p-4 bg-neutral-50 rounded-lg">
+                        <div class="font-medium">Skills Update Recommended</div>
+                        <p class="text-neutral-600">Consider adding Docker to your skill set for better job matches</p>
+                        <div class="text-sm text-neutral-500 mt-1">2 days ago</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="space-y-6">
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-4">Notification Settings</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="font-medium">Job Matches</div>
+                            <div class="text-sm text-neutral-600">New job recommendations</div>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer" checked>
+                            <div class="w-11 h-6 bg-neutral-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="font-medium">Application Updates</div>
+                            <div class="text-sm text-neutral-600">Status changes and feedback</div>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer" checked>
+                            <div class="w-11 h-6 bg-neutral-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                        </label>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="font-medium">Resume Analysis</div>
+                            <div class="text-sm text-neutral-600">AI-powered insights</div>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer" checked>
+                            <div class="w-11 h-6 bg-neutral-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg border border-neutral-200/20 p-6">
+                <h3 class="text-xl font-semibold text-neutral-800 mb-4">Email Preferences</h3>
+                <div class="space-y-3">
+                    <button class="w-full px-4 py-2 text-left bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors">
+                        <div class="font-medium">Daily Digest</div>
+                        <div class="text-sm text-neutral-600">Summary of activities</div>
+                    </button>
+                    <button class="w-full px-4 py-2 text-left bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors">
+                        <div class="font-medium">Weekly Report</div>
+                        <div class="text-sm text-neutral-600">Progress overview</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></element></div>
+            <div id="page_complete">
+            <script src="/edit/edit.js"></script>
+            <script>
+                console.log('Page complete');
+                
+            </script>
+            </body>
+            </html>
+          
